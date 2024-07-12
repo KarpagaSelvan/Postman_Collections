@@ -1,0 +1,381 @@
+{
+	"info": {
+		"_postman_id": "ccadfd2a-90e1-4e6f-8034-fec580374666",
+		"name": "Institute",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23612952"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res = JSON.parse(responseBody);\r",
+							"\r",
+							"var logtoken = pm.globals.set(\"logtoken\", \"res.data.logtoken\");\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Selvah@123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "selvankarpaga@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{URL}}/api/postmanBasicAuthLogin",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"postmanBasicAuthLogin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign In",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res = JSON.parse(responseBody);\r",
+							"var logtoken = pm.globals.set(\"logtoken\", \"res.data.logtoken\");\r",
+							"console.log(logtoken);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "Selvah@123",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "selvankarpaga@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"{{UserName}}\",\r\n  \"pass\": \"{{Password}}\"\r\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/api/login",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login with API Key",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{URL}}/api/loginWithApiKey",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"loginWithApiKey"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Access Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"dummy@gmail.com\",\r\n  \"password\": \"dummy123\"\r\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/api/accessToken?Accept=app",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"accessToken"
+					],
+					"query": [
+						{
+							"key": "Accept",
+							"value": "app"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"dummy@gmail.com\",\r\n  \"refresh_token\": \"skjvhbahfvbawjq4bw4bfq3h48923ed9834hfq8734bfq3ub4rh4j3q5bj3b53j4h5b3jh45b2345b354jh23b5jhg45v\"\r\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/api/refreshToken",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"refreshToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res = JSON.parse(responseBody);\r",
+							"\r",
+							"var logtoken = pm.globals.set(\"logtoken\", \"res.data.logtoken\");\r",
+							"console.log(logtoken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer {{logtoken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{URL}}/api/getUserAddress",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"getUserAddress"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add User Address",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res = JSON.parse(responseBody);\r",
+							"var logtoken = pm.globals.set(\"logtoken\", res.data.logtoken);\r",
+							"console.log(logtoken);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "\"Bearer \"+{{logtoken}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"first_name\": {{FirstName}},\r\n  \"last_name\": {{LastName}},\r\n  \"mobile\": {{mobile}},\r\n  \"apartment\": {{apartment}},\r\n  \"state\": {{state}},\r\n  \"city\": {{city}},\r\n  \"country\": {{country}},\r\n  \"zipcode\": {{zipcode}},\r\n  \"address\": {{address}},\r\n  \"address_type\": {{addressType}}\r\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/api/addUserAddress",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"addUserAddress"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User Address",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjRhZDc4ZTA4MTYyNDA4NDg1MjFjMDc4OTNkNjI2M2FjMWRhYjAwYmYxY2MxODBmNzhmOWU0YjI2NGY3Y2RiYmQ0OThlYWRmOGQ1NzUzZTg1In0.eyJhdWQiOiIzIiwianRpIjoiNGFkNzhlMDgxNjI0MDg0ODUyMWMwNzg5M2Q2MjYzYWMxZGFiMDBiZjFjYzE4MGY3OGY5ZTRiMjY0ZjdjZGJiZDQ5OGVhZGY4ZDU3NTNlODUiLCJpYXQiOjE2NjU3NDA3MjksIm5iZiI6MTY2NTc0MDcyOSwiZXhwIjoxNjk3Mjc2NzI5LCJzdWIiOiI5OTgiLCJzY29wZXMiOltdfQ.qvJWsyGfyyFF0n4SrhJ0LLow0AWF6cy3vuimI0xfKjBkIzQe7QXNnTxdB2aibdrSm1PRpTjbjsrT4DvXB5Qnx_9xwmXz5JI82sJmGH9FIi75SxAG3bHDucPVY4VIpdBjot2I9a9JScjo5E-BHmum-ZdxhQMjwaZrGL47oorvVTFqBMNcyeyIZV7ElgGLz1ZVP1tYLyBOJrcLvHJtIuvqZz4VKNasp-K12Y0wOkKhtexyyhIaiQTCOEGM4q4ZgQCzb5JDREoprqELz7_s27PKCXqAgknOVMo-HDCShagVgNcsYJKsBaNZdhdqZx_7aE86RFbA4SnuO6AT84M_2nsRhMJbuiZDNSUXoxiNc2bIqP_nf16THzIv9hCneoy2ijle7ErukSv8cFXwilPaPTU-um5q1pdZ1SdfumMxvhbjn_ikqBxm9sylfGybi3aKdOUfhYpOVUzFToRLdW4cIBNDXwrPfhqRKMjrBiJ9bzp18EIWXgdoeutnZsB6LJNiSqldmZf4GNBzAhFHlQUIEUCNIk4AO0ozrnqYAuB6PFEQXfB-z2fzNRPpKaFuCxoiwUelQETj6AmXL04DvG4ukyrSHSinK_njRbDGnNIxJ897EJoB0FChfctHVrZapSFG7ZFWjDPaThsZqeOQadUaEpdmyN0-lzKUzwvHBiwCWsWSluc",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"address_id\": \"30891\",\r\n  \"first_name\": \"Raj\",\r\n  \"last_name\": \"Khundra\",\r\n  \"mobile\": \"1234567898\",\r\n  \"apartment\": \"apartment\",\r\n  \"state\": 33,\r\n  \"city\": 3378,\r\n  \"country\": 101,\r\n  \"zipcode\": \"202020\",\r\n  \"address\": \"64/63 partap nagar\",\r\n  \"address_type\": \"home\"\r\n}"
+				},
+				"url": {
+					"raw": "{{URL}}/api/updateUserAddress",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"api",
+						"updateUserAddress"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddUserAddress",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

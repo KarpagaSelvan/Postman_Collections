@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "ae195c5c-086a-4c9a-934b-84e312e56685",
+		"name": "Change profile pic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23612952"
+	},
+	"item": [
+		{
+			"name": "ChangeprofilePic",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjBlYWM1NzJiYjE5MmNlMGI1YzQ1ODE0ZDdiMGVhYWUzODk5YjQzNTVhNDkwNWIyMzRiODk4N2JhZTFiNjE4MDZiYzA3YmEzYzY3NTQ3ZGIwIn0.eyJhdWQiOiIzIiwianRpIjoiMGVhYzU3MmJiMTkyY2UwYjVjNDU4MTRkN2IwZWFhZTM4OTliNDM1NWE0OTA1YjIzNGI4OTg3YmFlMWI2MTgwNmJjMDdiYTNjNjc1NDdkYjAiLCJpYXQiOjE2NjUzMDY3NDUsIm5iZiI6MTY2NTMwNjc0NSwiZXhwIjoxNjk2ODQyNzQ1LCJzdWIiOiI5OTgiLCJzY29wZXMiOltdfQ.hMcOXEj4QHcVgto1E-PanpdQdZ9bjmPX2bS4eM4mE4wfVHuehCT9kuF0rowtP_ZCmAn9FZSvIINhKU9NunkD5K62glnQzaPqYtRGC-AQTrc1rFfKCwIYtsnG2u-LQRgb7XS6I5bVHYITRj6-uGL2tH2Do0o8dZU7hQaVWHrZDdS6X6nMF_Y9z4n4Wq-r3ddkYCwLS_zQN8OhtZHtzcYze9Qr7hqC-O4_aMSX141u_JBUuOEuIwvJ5d4sr9BdP4hKbtP8UQqOm2ODjkeD8zHjwoLMQlOKW7EzqzpESEXFVKP7owHUP-2P4K63i-zT5tC2jmPFFQ6TvTg-E_QF59GhAke0EEwHyrYBLMVDyaJTMl4LFD5y1yezqyKZJ5uOvYYraVSzp2Ya9WaKBHZKd7gfz5VtaNsrRXgJ3COTtoZlRfUWPKw8j5fztwzaA4rN9k3_qS7sI-d7_n1Hy6jFcgHtcYJLsy76ktgpeLUO6Ub4-usgof1pVKMa4djB-NdBemcudNlhqzYwgKRqv39E6LEC9RtkYIIWSO5JILVqMyNe4ljVCV1IsW7lgt1pFsuK8eYVm6iiwtMIHfx4GlF6Rvr6pRFn53K6khxN0nXhsNqGpplMFNezNkVvS3gM8MukqZ85P-Djrw-fpLRM1CgB9-nB3osjyEswgssKJsjDUIfijaA' \\",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "profile_picture",
+							"type": "file",
+							"src": "/C:/Users/ELCOT/Desktop/download (1).jfif"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://omrbranch.com/api/changeProfilePic",
+					"protocol": "https",
+					"host": [
+						"omrbranch",
+						"com"
+					],
+					"path": [
+						"api",
+						"changeProfilePic"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
